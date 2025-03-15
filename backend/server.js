@@ -8,6 +8,7 @@ import applicationRouter from "./routes/application.route.js"
 import cookieParser from "cookie-parser"
 import fileUpload from "express-fileupload"
 import connectDB from "./config/db.js"
+import { errorMiddleware } from "./middlewares/error.middleware.js"
 
 
 dotenv.config()
@@ -38,6 +39,7 @@ app.use("/api/v1/user", userRouter)
 app.use("/api/v1/job", jobRouter)
 app.use("/api/v1/application", applicationRouter)
 
+app.use(errorMiddleware)
 
 app.listen(PORT, ()=>{
     console.log("Server is listening on PORT: ", PORT)
