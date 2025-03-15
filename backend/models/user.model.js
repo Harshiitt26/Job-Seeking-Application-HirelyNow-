@@ -24,7 +24,8 @@ const userSchema = new mongoose.Schema({
     password:{
         type: String,
         required: [true, "Please provide your password!"],
-        minLength: [4, "password must contain atleast 4 characters"]
+        minLength: [4, "password must contain atleast 4 characters"],
+        select: false
     },
     role:{
         type: String,
@@ -48,7 +49,7 @@ userSchema.methods.comparePassword = async function(enteredPassword){
 }
 
 // GENERATING A JWT TOKEN FOR AUTHORIZATION
-userSchema.methods.getJWTToken = async function(){
+userSchema.methods.getJWTToken = function(){
     return jwt.sign(
         {id: this._id},
         process.env.JWT_SECRET_KEY,
