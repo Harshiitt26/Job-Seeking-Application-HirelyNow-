@@ -9,6 +9,10 @@ import cookieParser from "cookie-parser"
 import fileUpload from "express-fileupload"
 import connectDB from "./config/db.js"
 import { errorMiddleware } from "./middlewares/error.middleware.js"
+import EventEmitter from "events";
+// Increase the max listeners limit to avoid warnings
+const emitter = new EventEmitter();
+emitter.setMaxListeners(20);
 
 
 dotenv.config()
