@@ -8,6 +8,6 @@ router.route("/post").post(isAuthorized, postJob)
 router.route("/getmyjobs").get(isAuthorized , getMyJobs)
 router.route("/update/:id").put(isAuthorized , updateJob)
 router.route("/delete/:id").delete(isAuthorized , deleteJob)
-router.route("/:id").get(getSingleJob)
+router.route("/:id").get(isAuthorized, getSingleJob)
 
 export default router
