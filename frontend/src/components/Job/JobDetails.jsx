@@ -10,7 +10,7 @@ const JobDetails = () => {
   const {isAuthorized, user} = useContext(Context)
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/v1/job/${id}`,{withCredentials: true})
+    axios.get(`https://job-seeking-application-hirelynow-backend.onrender.com/api/v1/job/${id}`,{withCredentials: true})
     .then((res)=>{
       setJob(res.data.job)
       console.log(res.data.job)
