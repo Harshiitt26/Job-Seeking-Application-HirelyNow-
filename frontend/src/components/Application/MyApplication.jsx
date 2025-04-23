@@ -18,12 +18,12 @@ const MyApplication = () => {
   useEffect(() => {
     try {
       if (user && user.role === "Employer") {
-        axios.get("http://localhost:3000/api/v1/application/employer/getall", {withCredentials: true})
+        axios.get("https://job-seeking-application-hirelynow-backend.onrender.com/api/v1/application/employer/getall", {withCredentials: true})
         .then((res)=>{
           setApplications(res.data.applications)
         })
       } else {
-        axios.get("http://localhost:3000/api/v1/application/jobseeker/getall", {withCredentials: true})
+        axios.get("https://job-seeking-application-hirelynow-backend.onrender.com/api/v1/application/jobseeker/getall", {withCredentials: true})
         .then((res)=>{
           setApplications(res.data.applications)
         })
@@ -39,7 +39,7 @@ const MyApplication = () => {
 
   const deleteApplication = async(id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/v1/application/delete/${id}`, {withCredentials: true})
+      await axios.delete(`https://job-seeking-application-hirelynow-backend.onrender.com/api/v1/application/delete/${id}`, {withCredentials: true})
       .then((res)=>{
         toast.success(res.data.message)
         setApplications((prevApplication)=>
