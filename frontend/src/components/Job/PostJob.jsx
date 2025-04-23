@@ -32,7 +32,7 @@ const PostJob = () => {
       setSalaryTo("")
       setFixedSalary("")
     }
-    await axios.post("http://localhost:3000/api/v1/job/post", fixedSalary.length >=4 
+    await axios.post("https://job-seeking-application-hirelynow-backend.onrender.com/api/v1/job/post", fixedSalary.length >=4 
       ? {title,description,category,city,country,location,fixedSalary}
       : {title,description,category,city,country,location,salaryFrom,salaryTo}
       ,{withCredentials: true , headers:{"Content-Type": "application/json"}}
