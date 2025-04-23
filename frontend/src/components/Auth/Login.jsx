@@ -18,7 +18,7 @@ const Login = () => {
   const handleLogin = async (e)=>{
     e.preventDefault()
     try {
-      const {data} = await axios.post("http://localhost:3000/api/v1/user/login", {email,password,role} , {withCredentials: true, headers: {"Content-Type": "application/json"}})
+      const {data} = await axios.post("https://job-seeking-application-hirelynow-backend.onrender.com/api/v1/user/login", {email,password,role} , {withCredentials: true, headers: {"Content-Type": "application/json"}})
       toast.success(data.message)
       setEmail("")
       setRole("")
