@@ -18,7 +18,7 @@ import axios from "axios"
 import { Toaster } from "react-hot-toast";
 
 
-
+axios.defaults.withCredentials = true;
 const App = () => {
   const {isAuthorized, setIsAuthorized, setUser} = useContext(Context)
 
