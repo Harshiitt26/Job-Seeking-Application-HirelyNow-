@@ -40,6 +40,7 @@ const App = () => {
   return (
     <>
       <Router>
+        <Navbar/>
         {window.location.pathname !== "/login" && window.location.pathname !== "/register"}
         <Routes>
           <Route path='/login' element={<Login/>} />
