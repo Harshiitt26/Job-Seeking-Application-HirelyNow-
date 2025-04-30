@@ -5,6 +5,7 @@ import HeroSection from "./HeroSection"
 import HowItWorks from "./HowItWorks"
 import PopularCategories from "./PopularCategories"
 import PopularCompanies from "./PopularCompanies"
+import Navbar from "./components/Layout/Navbar"
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
   }
   return (
     <>
+      <Navbar />
       <section className="homePage page">
         <HeroSection/>
         <HowItWorks/>
