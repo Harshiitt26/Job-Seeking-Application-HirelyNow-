@@ -5,7 +5,7 @@ import HeroSection from "./HeroSection"
 import HowItWorks from "./HowItWorks"
 import PopularCategories from "./PopularCategories"
 import PopularCompanies from "./PopularCompanies"
-import Navbar from "./components/Layout/Navbar"
+import Navbar from '../Layout/Navbar'
 
 
 const Home = () => {
