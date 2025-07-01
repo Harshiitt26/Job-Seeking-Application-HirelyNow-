@@ -23,17 +23,19 @@ const App = () => {
   const {isAuthorized, setIsAuthorized, setUser} = useContext(Context)
 
   useEffect(() => {
-    const fetchUser = async ()=>{
-      try{
-        const response = await axios.get("https://job-seeking-application-hirelynow-backend.onrender.com/api/v1/user/getuser",{withCredentials: true})
-        setUser(response.data.user)
-        setIsAuthorized(true)
-      } catch(error){
-        setIsAuthorized(false)
+  const fetchUser = async () => {
+    try {
+      if (window.location.pathname !== "/login" && window.location.pathname !== "/register") {
+        const response = await axios.get("https://job-seeking-application-hirelynow-backend.onrender.com/api/v1/user/getuser", { withCredentials: true });
+        setUser(response.data.user);
+        setIsAuthorized(true);
       }
+    } catch (error) {
+      setIsAuthorized(false);
     }
-    fetchUser()
-  }, [isAuthorized])
+  };
+  fetchUser();
+}, []);
   
 
 
